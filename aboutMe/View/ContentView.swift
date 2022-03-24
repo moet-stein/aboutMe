@@ -141,7 +141,7 @@ class ContentView: UIView {
     
     let hobbyLabel: GreenPoppinsLabel = {
         let label = GreenPoppinsLabel()
-        label.text = "❤️ Yoga, Grammar, Trip"
+        label.text = "❤️ Yoga, Language Learning, Trip"
         return label
     }()
     
@@ -249,13 +249,13 @@ class ContentView: UIView {
             whyIosView.topAnchor.constraint(equalTo: moreInfoView.bottomAnchor, constant: 20),
             whyIosView.leadingAnchor.constraint(equalTo: moreInfoView.leadingAnchor),
             whyIosView.trailingAnchor.constraint(equalTo: moreInfoView.trailingAnchor),
-            whyIosView.heightAnchor.constraint(equalToConstant: 250),
+            whyIosView.heightAnchor.constraint(equalToConstant: 220),
             
             
             greetingButton.topAnchor.constraint(equalTo: whyIosView.bottomAnchor, constant: 20),
             greetingButton.leadingAnchor.constraint(equalTo: whyIosView.leadingAnchor, constant: 40),
             greetingButton.trailingAnchor.constraint(equalTo: whyIosView.trailingAnchor, constant: -40),
-            greetingButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            greetingButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -30),
             greetingButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         
