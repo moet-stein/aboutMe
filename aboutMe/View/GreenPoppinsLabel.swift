@@ -19,7 +19,7 @@ class GreenPoppinsLabel: UILabel {
     }
     
     private func setUpUI() {
-        textColor = UIColor(red: 0.37, green: 0.48, blue: 0.38, alpha: 1.00)
+        textColor = UIColor(named: "GreenText")
         font = UIFont(name: "Poppins-Regular", size: 15)
     }
     

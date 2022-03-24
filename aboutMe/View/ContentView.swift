@@ -12,7 +12,7 @@ class ContentView: UIView {
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = UIColor(red: 0.95, green: 0.97, blue: 0.91, alpha: 1.00)
+        scrollView.backgroundColor = UIColor(named: "BgColor")
         return scrollView
     }()
     
@@ -39,7 +39,7 @@ class ContentView: UIView {
     let topView : UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 0.89, green: 0.76, blue: 0.73, alpha: 1.00)
+        view.backgroundColor = UIColor(named: "Peach")
         view.layer.cornerRadius = 20
         return view
         
@@ -60,7 +60,7 @@ class ContentView: UIView {
         label.text = "Moe Steinmueller"
         label.heightAnchor.constraint(equalToConstant: 30).isActive = true
         label.font = UIFont(name: "Poppins-Bold", size: 20)
-        label.textColor = UIColor(red: 0.37, green: 0.48, blue: 0.38, alpha: 1.00)
+        label.textColor = UIColor(named: "GreenText")
         return label
     }()
     
@@ -70,7 +70,7 @@ class ContentView: UIView {
         label.text = "She/Her"
         label.heightAnchor.constraint(equalToConstant: 20).isActive = true
         label.font = UIFont(name: "Poppins-Light", size: 13)
-        label.textColor = UIColor(red: 0.37, green: 0.48, blue: 0.38, alpha: 1.00)
+        label.textColor = UIColor(named: "GreenText")
         return label
     }()
     
@@ -83,7 +83,7 @@ class ContentView: UIView {
         My aim is to become a great iOS developer who can implement Data Structure and Algorithms effectively with clean code for beautiful interfaces!
         """
         label.font = UIFont(name: "Poppins-Regular", size: 13)
-        label.textColor = UIColor(red: 0.37, green: 0.48, blue: 0.38, alpha: 1.00)
+        label.textColor = UIColor(named: "GreenText")
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.textAlignment = .center
@@ -102,7 +102,7 @@ class ContentView: UIView {
     
     let appleLine: GreenPoppinsLabel = {
        let label = GreenPoppinsLabel()
-        label.text = "                   "
+        label.text = "                  "
         return label
     }()
     
@@ -185,7 +185,7 @@ class ContentView: UIView {
             I like the iOS interfaces and its possibilities of functionalities that can be implemented by code. And Swift is my favorite language!
             I love that learning iOS development is a never-ending journey, and it's just getting more exciting as I gain knowledge!
             """
-        label.changeFontWeightSize(fontWeight: "light", size: 13)
+        label.changeFontWeightSize(fontWeight: "Regular", size: 13)
         label.numberOfLines = 18
         return label
     }()
@@ -195,9 +195,9 @@ class ContentView: UIView {
     lazy var greetingButton: UIButton = {
       let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(red: 0.89, green: 0.76, blue: 0.73, alpha: 1.00)
+        button.backgroundColor = UIColor(named: "Peach")
         button.setTitle("Let's say Hi!", for: .normal)
-        button.tintColor = UIColor(red: 0.37, green: 0.48, blue: 0.38, alpha: 1.00)
+        button.tintColor = UIColor(named: "Peach")
         button.titleLabel?.font = UIFont(name: "Poppins-Bold", size: 20)
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(showAlertAction), for: .touchUpInside)

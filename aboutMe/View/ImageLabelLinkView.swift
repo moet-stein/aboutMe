@@ -37,7 +37,7 @@ class ImageLabelLinkView: UIView {
         
         let textView: UITextView = {
             let textView = UITextView()
-            textView.translatesAutoresizingMaskIntoConstraints = false
+            textView.translatesAutoresizingMaskIntoConstraints = false	
             textView.isSelectable = true
             textView.isEditable = false
             textView.isUserInteractionEnabled = false
@@ -49,7 +49,7 @@ class ImageLabelLinkView: UIView {
             
             textView.tintColor = textColor
             textView.font = UIFont(name: "Poppins-Light", size: textSize)
-            textView.backgroundColor = UIColor(red: 0.75, green: 0.85, blue: 0.72, alpha: 1.00)
+            textView.backgroundColor = UIColor(named: "LightGreen")
             
             textView.widthAnchor.constraint(equalToConstant: 230).isActive = true
             textView.heightAnchor.constraint(equalToConstant: 30).isActive = true
