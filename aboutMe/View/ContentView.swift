@@ -182,8 +182,7 @@ class ContentView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = """
             I fell in love with iOS development when I ran my first app on my physical device for the first time!
-            I like the iOS interfaces and its possibilities of functionalities that can be implemented by code.
-            And Swift is my favorite language!
+            I like the iOS interfaces and its possibilities of functionalities that can be implemented by code. And Swift is my favorite language!
             I love that learning iOS development is a never-ending journey, and it's just getting more exciting as I gain knowledge!
             """
         label.changeFontWeightSize(fontWeight: "light", size: 13)
@@ -193,7 +192,7 @@ class ContentView: UIView {
     
     // MARK: - custom greeting button
     
-    let greetingButton: UIButton = {
+    lazy var greetingButton: UIButton = {
       let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = UIColor(red: 0.89, green: 0.76, blue: 0.73, alpha: 1.00)
@@ -201,8 +200,18 @@ class ContentView: UIView {
         button.tintColor = UIColor(red: 0.37, green: 0.48, blue: 0.38, alpha: 1.00)
         button.titleLabel?.font = UIFont(name: "Poppins-Bold", size: 20)
         button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(showAlertAction), for: .touchUpInside)
         return button
     }()
+    
+   @objc func showAlertAction(){
+        let alert = UIAlertController(title: "Hi, Nice to meet you!", message: "How are you?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Good!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            print("Good is pressed")
+        }))
+        alert.addAction(UIAlertAction(title: "Awesome!", style: UIAlertAction.Style.default, handler: nil))
+        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+    }
     
     private func setUpUI() {
         setOuterViews()
