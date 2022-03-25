@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		6068CAE727E8806600DC30E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CAE627E8806600DC30E3 /* AppDelegate.swift */; };
 		6068CAE927E8806600DC30E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CAE827E8806600DC30E3 /* SceneDelegate.swift */; };
-		6068CAEB27E8806600DC30E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CAEA27E8806600DC30E3 /* ViewController.swift */; };
+		6068CAEB27E8806600DC30E3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CAEA27E8806600DC30E3 /* HomeViewController.swift */; };
 		6068CAF027E8806800DC30E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6068CAEF27E8806800DC30E3 /* Assets.xcassets */; };
 		6068CAF327E8806800DC30E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6068CAF127E8806800DC30E3 /* LaunchScreen.storyboard */; };
-		6068CAFC27E8833300DC30E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6068CAFB27E8833300DC30E3 /* ContentView.swift */; };
 		6068CB0027E88B5B00DC30E3 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6068CAFF27E88B5B00DC30E3 /* Poppins-Regular.ttf */; };
 		6068CB0227E88B8300DC30E3 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6068CB0127E88B8300DC30E3 /* Poppins-Light.ttf */; };
 		6068CB0427E88B9400DC30E3 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6068CB0327E88B9400DC30E3 /* Poppins-Bold.ttf */; };
@@ -27,11 +26,10 @@
 		6068CAE327E8806600DC30E3 /* aboutMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aboutMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6068CAE627E8806600DC30E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6068CAE827E8806600DC30E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6068CAEA27E8806600DC30E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6068CAEA27E8806600DC30E3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6068CAEF27E8806800DC30E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6068CAF227E8806800DC30E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6068CAF427E8806800DC30E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6068CAFB27E8833300DC30E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6068CAFF27E88B5B00DC30E3 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		6068CB0127E88B8300DC30E3 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		6068CB0327E88B9400DC30E3 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 		6068CAFA27E8829000DC30E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6068CAFB27E8833300DC30E3 /* ContentView.swift */,
 				6068CB0527E88EE600DC30E3 /* GreenRoundedUIView.swift */,
 				6068CB0727E8B63800DC30E3 /* ImageLabelLinkView.swift */,
 				6068CB0927E92DD800DC30E3 /* IconButton.swift */,
@@ -100,7 +97,7 @@
 		6068CAFD27E8834100DC30E3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6068CAEA27E8806600DC30E3 /* ViewController.swift */,
+				6068CAEA27E8806600DC30E3 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,13 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6068CAEB27E8806600DC30E3 /* ViewController.swift in Sources */,
+				6068CAEB27E8806600DC30E3 /* HomeViewController.swift in Sources */,
 				6068CAE727E8806600DC30E3 /* AppDelegate.swift in Sources */,
 				6068CB0A27E92DD800DC30E3 /* IconButton.swift in Sources */,
 				6068CB0E27EB5FB800DC30E3 /* VerticalSVWithParent.swift in Sources */,
 				6068CB0827E8B63800DC30E3 /* ImageLabelLinkView.swift in Sources */,
 				6068CB0C27EB3DDE00DC30E3 /* GreenPoppinsLabel.swift in Sources */,
-				6068CAFC27E8833300DC30E3 /* ContentView.swift in Sources */,
 				6068CB0627E88EE600DC30E3 /* GreenRoundedUIView.swift in Sources */,
 				6068CAE927E8806600DC30E3 /* SceneDelegate.swift in Sources */,
 			);
