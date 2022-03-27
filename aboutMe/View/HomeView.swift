@@ -7,7 +7,14 @@
 
 import UIKit
 
+//this protocol is all about presenting a new view controller
+protocol Presentable: AnyObject {
+    func presentViewController()
+}
+
 class HomeView: UIView {
+    
+    weak var presentable: Presentable?
 
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -184,7 +191,7 @@ class HomeView: UIView {
     
     // MARK: - custom greeting button
     
-    lazy var greetingButton: UIButton = {
+    let greetingButton: UIButton = {
       let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = UIColor(named: "Peach")
@@ -192,20 +199,26 @@ class HomeView: UIView {
         button.tintColor = UIColor(named: "Peach")
         button.titleLabel?.font = UIFont(name: "Poppins-Bold", size: 20)
         button.layer.cornerRadius = 5
-        button.addTarget(self, action: #selector(showAlertAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
     }()
     
-   @objc func showAlertAction(){
-        let alert = UIAlertController(title: "Hi, Nice to meet you!", message: "How are you?", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Good!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
-            print("Good is pressed")
-        }))
-        alert.addAction(UIAlertAction(title: "Awesome!", style: UIAlertAction.Style.default, handler: nil))
-        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+//   @objc func showAlertAction(){
+//        let alert = UIAlertController(title: "Hi, Nice to meet you!", message: "How are you?", preferredStyle: UIAlertController.Style.alert)
+//        alert.addAction(UIAlertAction(title: "Good!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+//            print("Good is pressed")
+//        }))
+//        alert.addAction(UIAlertAction(title: "Awesome!", style: UIAlertAction.Style.default, handler: nil))
+//        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+//    }
+    
+    @objc func buttonPressed() {
+        presentable?.presentViewController()
     }
    
-    init() {
+    init(presentable: Presentable?) {
+        self.presentable = presentable
+        
         super.init(frame: .zero)
         setUpUI()
     }
