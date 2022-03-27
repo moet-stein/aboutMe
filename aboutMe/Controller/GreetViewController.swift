@@ -29,7 +29,7 @@ class GreetViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        greetView = GreetView()
+        greetView = GreetView(greetingDeleagate: greetingDelegate)
         view = greetView
     }
     

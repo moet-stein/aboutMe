@@ -8,22 +8,59 @@
 import UIKit
 
 class GreetView: UIView {
+    
+    weak var greetingDelegate: Greeting?
 
-    let label: UILabel = {
+    let helloLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "GreetView"
-        label.textColor = .white
-        label.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        label.text = "Hali Halo!"
+        label.font = UIFont(name: "Poppins-Bold", size: 40)
+        label.textColor = UIColor(named: "GreenText")
+        label.textAlignment = .center
+        label.heightAnchor.constraint(equalToConstant: 100).isActive = true
         return label
     }()
+    
+    let howAreYouLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "How are you today?"
+        label.font = UIFont(name: "Poppins-Regular", size: 35)
+        label.textColor = UIColor(named: "GreenText")
+        label.textAlignment = .center
+//        label.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return label
+    }()
+    
+    let awesomeButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("😆 Awesome", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 30)
+        button.addTarget(self, action: #selector(answerPressed), for: .touchUpInside)
+        return button
+    }()
+    
+//    let awesomeButton: UIButton = {
+//        let button = UIButton()
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.setTitle("😌", for: .normal)
+//        button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 100)
+//        return button
+//    }()
 
+    @objc func answerPressed() {
+        greetingDelegate?.greet(answer: "awesome")
+    }
 
-    init() {
+    init(greetingDeleagate: Greeting?){
+        self.greetingDelegate = greetingDeleagate
+        
         super.init(frame: .zero)
         setUpUI()
         
-        backgroundColor = .systemTeal
+        backgroundColor = UIColor(named: "YellowGreen")
     }
     
     required init?(coder: NSCoder) {
@@ -32,14 +69,17 @@ class GreetView: UIView {
     
     private func setUpUI() {
         
-        addSubview(label)
+        let verticalSV: VerticalSVWithParent = {
+           let stackView = VerticalSVWithParent()
+            stackView.alignmentCenter()
+            return stackView
+        }()
         
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: topAnchor, constant: 50),
-            label.leadingAnchor.constraint(equalTo: leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: trailingAnchor),
-            label.heightAnchor.constraint(equalToConstant: 50),
-        ])
-
+        addSubview(verticalSV)
+        verticalSV.addConstraintsWithParentView(parentView: self)
+        
+        verticalSV.addArrangedSubview(helloLabel)
+        verticalSV.addArrangedSubview(howAreYouLabel)
+        verticalSV.addArrangedSubview(awesomeButton)
     }
 }
