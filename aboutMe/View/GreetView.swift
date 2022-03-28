@@ -29,30 +29,27 @@ class GreetView: UIView {
         label.font = UIFont(name: "Poppins-Regular", size: 35)
         label.textColor = UIColor(named: "GreenText")
         label.textAlignment = .center
-//        label.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 50).isActive = true
         return label
     }()
     
-    let awesomeButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("😆 Awesome", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 30)
-        button.addTarget(self, action: #selector(answerPressed), for: .touchUpInside)
+    lazy var awesomeButton: AnswerButton = {
+        let button = AnswerButton(buttonText: "Awesome😆", delegate: greetingDelegate)
+        button.tag = 1
         return button
     }()
     
-//    let awesomeButton: UIButton = {
-//        let button = UIButton()
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        button.setTitle("😌", for: .normal)
-//        button.titleLabel?.font = UIFont(name: "Poppins-Regular", size: 100)
-//        return button
-//    }()
-
-    @objc func answerPressed() {
-        greetingDelegate?.greet(answer: "awesome")
-    }
+    lazy var happyButton: AnswerButton = {
+        let button = AnswerButton(buttonText: "Feeling Happy☺️", delegate: greetingDelegate)
+        button.tag = 2
+        return button
+    }()
+    
+    lazy var fantasticButton: AnswerButton = {
+        let button = AnswerButton(buttonText: "Fantastic🤩", delegate: greetingDelegate)
+        button.tag = 3
+        return button
+    }()
 
     init(greetingDeleagate: Greeting?){
         self.greetingDelegate = greetingDeleagate
@@ -68,18 +65,36 @@ class GreetView: UIView {
     }
     
     private func setUpUI() {
-        
-        let verticalSV: VerticalSVWithParent = {
-           let stackView = VerticalSVWithParent()
-            stackView.alignmentCenter()
-            return stackView
+
+        let stackView: UIStackView = {
+            let view = UIStackView()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.axis = .vertical
+            view.alignment = .center
+            view.distribution = .fillProportionally
+            view.spacing = 40
+            return view
         }()
+        stackView.addArrangedSubview(awesomeButton)
+        stackView.addArrangedSubview(happyButton)
+        stackView.addArrangedSubview(fantasticButton)
         
-        addSubview(verticalSV)
-        verticalSV.addConstraintsWithParentView(parentView: self)
+        addSubview(helloLabel)
+        addSubview(howAreYouLabel)
+        addSubview(stackView)
         
-        verticalSV.addArrangedSubview(helloLabel)
-        verticalSV.addArrangedSubview(howAreYouLabel)
-        verticalSV.addArrangedSubview(awesomeButton)
+        NSLayoutConstraint.activate([
+            helloLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            helloLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            helloLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+
+            howAreYouLabel.topAnchor.constraint(equalTo: helloLabel.bottomAnchor, constant: 10),
+            howAreYouLabel.leadingAnchor.constraint(equalTo: helloLabel.leadingAnchor),
+            howAreYouLabel.trailingAnchor.constraint(equalTo: helloLabel.trailingAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: howAreYouLabel.bottomAnchor, constant: 100),
+            stackView.leadingAnchor.constraint(equalTo: howAreYouLabel.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: howAreYouLabel.trailingAnchor),
+        ])
     }
 }
