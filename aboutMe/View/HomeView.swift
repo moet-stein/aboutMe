@@ -126,11 +126,6 @@ class HomeView: UIView {
         return imageLabel
     }()
     
-//    let notionLabel: ImageLabelLinkView = {
-//        let imageLabel = ImageLabelLinkView(text: "notion.moet-stein", imageName: "notionLogo", imageSize: 25, link: "https://www.notion.so/1ac7da06b1024e0c9ea144df8e4abc40?v=39875f870c914acc91808216de84591d")
-//        return imageLabel
-//    }()
-    
     // MARK: - moreInfoView
     let moreInfoView: GreenRoundedUIView = {
         let view = GreenRoundedUIView()
@@ -202,15 +197,7 @@ class HomeView: UIView {
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
     }()
-    
-//   @objc func showAlertAction(){
-//        let alert = UIAlertController(title: "Hi, Nice to meet you!", message: "How are you?", preferredStyle: UIAlertController.Style.alert)
-//        alert.addAction(UIAlertAction(title: "Good!", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
-//            print("Good is pressed")
-//        }))
-//        alert.addAction(UIAlertAction(title: "Awesome!", style: UIAlertAction.Style.default, handler: nil))
-//        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
-//    }
+
     
     @objc func buttonPressed() {
         presentable?.presentViewController()
