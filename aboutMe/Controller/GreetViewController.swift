@@ -25,7 +25,7 @@ class GreetViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var greetView: GreetView!
+    private var greetView: GreetView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,7 +11,7 @@ class GreetView: UIView {
     
     weak var greetingDelegate: Greeting?
 
-    let helloLabel: UILabel = {
+    private let helloLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Hali Halo!"
@@ -22,7 +22,7 @@ class GreetView: UIView {
         return label
     }()
     
-    let howAreYouLabel: UILabel = {
+    private let howAreYouLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "How are you today?"

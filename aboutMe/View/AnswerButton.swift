@@ -8,7 +8,7 @@
 import UIKit
 
 class AnswerButton: UIButton {
-    var buttonText: String
+    private var buttonText: String
     weak var delegate: Greeting?
 
     init(buttonText: String, delegate: Greeting?, frame: CGRect = .zero) {
@@ -22,7 +22,7 @@ class AnswerButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpUI() {
+    private func setUpUI() {
         widthAnchor.constraint(equalToConstant: 200).isActive = true
         heightAnchor.constraint(equalToConstant: 50).isActive = true
         configuration = .answerGreet()

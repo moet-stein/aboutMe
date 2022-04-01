@@ -16,7 +16,7 @@ class HomeView: UIView {
     
     weak var presentable: Presentable?
 
-    let scrollView: UIScrollView = {
+    private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = UIColor(named: "BgColor")
@@ -24,7 +24,7 @@ class HomeView: UIView {
     }()
     
     // MARK: - TopView
-    let topView : UIView = {
+    private let topView : UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(named: "Peach")
@@ -33,7 +33,7 @@ class HomeView: UIView {
         
     }()
     
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let image = UIImage(named: "myImage")
         let myImageView:UIImageView = UIImageView()
         myImageView.contentMode = UIView.ContentMode.scaleAspectFit
@@ -41,7 +41,7 @@ class HomeView: UIView {
         return myImageView
     }()
     
-    let nameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Moe Steinmueller"
@@ -51,7 +51,7 @@ class HomeView: UIView {
         return label
     }()
     
-    let pronounLabel: UILabel = {
+    private let pronounLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "She/Her"
@@ -61,7 +61,7 @@ class HomeView: UIView {
         return label
     }()
     
-    let introLabel: UILabel = {
+    private let introLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = """
@@ -81,25 +81,25 @@ class HomeView: UIView {
     
     // MARK: - snsInfoView
     
-    let snsInfoView: GreenRoundedUIView = {
+    private let snsInfoView: GreenRoundedUIView = {
         let view = GreenRoundedUIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let appleLine: GreenPoppinsLabel = {
+    private let appleLine: GreenPoppinsLabel = {
        let label = GreenPoppinsLabel()
         label.text = "                  "
         return label
     }()
     
-    let locationLabel: GreenPoppinsLabel = {
+    private let locationLabel: GreenPoppinsLabel = {
         let label = GreenPoppinsLabel()
         label.setText("Berlin, Germany", prependedBySymbolNameed: "mappin.and.ellipse")
         return label
     }()
     
-    let twitterLabel: ImageLabelLinkView = {
+    private let twitterLabel: ImageLabelLinkView = {
         let imageLabel = ImageLabelLinkView(
             text: "@SteinieM",
             imageName: "twitterLogo",
@@ -108,7 +108,7 @@ class HomeView: UIView {
         return imageLabel
     }()
     
-    let linkedInLabel: ImageLabelLinkView = {
+    private let linkedInLabel: ImageLabelLinkView = {
         let imageLabel = ImageLabelLinkView(
             text: "linkedin.com/in/moe-steinmueller",
             imageName: "linkedInLogo",
@@ -117,7 +117,7 @@ class HomeView: UIView {
         return imageLabel
     }()
     
-    let githubLabel: ImageLabelLinkView = {
+    private let githubLabel: ImageLabelLinkView = {
         let imageLabel = ImageLabelLinkView(
             text: "GitHub",
             imageName: "githubLogo",
@@ -127,25 +127,25 @@ class HomeView: UIView {
     }()
     
     // MARK: - moreInfoView
-    let moreInfoView: GreenRoundedUIView = {
+    private let moreInfoView: GreenRoundedUIView = {
         let view = GreenRoundedUIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let hobbyLabel: GreenPoppinsLabel = {
+    private let hobbyLabel: GreenPoppinsLabel = {
         let label = GreenPoppinsLabel()
         label.text = "❤️ Yoga, Language Learning, Trip"
         return label
     }()
     
-    let languageLabel: GreenPoppinsLabel = {
+    private let languageLabel: GreenPoppinsLabel = {
        let label = GreenPoppinsLabel()
         label.text = "🗣️ 🇯🇵🇺🇸🇩🇪🇰🇷"
         return label
     }()
     
-    let favPlaceLabel: GreenPoppinsLabel = {
+    private let favPlaceLabel: GreenPoppinsLabel = {
         let label = GreenPoppinsLabel()
         label.text = "📍💖 Hanauma Bay, Koko Crater"
         return label
@@ -154,14 +154,14 @@ class HomeView: UIView {
     
     // MARK: - WhyIOSView
     
-    let whyIosView: GreenRoundedUIView = {
+    private let whyIosView: GreenRoundedUIView = {
         let view = GreenRoundedUIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.yelloView()
         return view
     }()
     
-    let whyIosTitle: GreenPoppinsLabel = {
+    private let whyIosTitle: GreenPoppinsLabel = {
         let label = GreenPoppinsLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.changeFontWeightSize(fontWeight: "bold", size: 15)
@@ -171,7 +171,7 @@ class HomeView: UIView {
         return label
     }()
     
-    let whyIosContenLabel: GreenPoppinsLabel = {
+    private let whyIosContenLabel: GreenPoppinsLabel = {
         let label = GreenPoppinsLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = """
@@ -186,7 +186,7 @@ class HomeView: UIView {
     
     // MARK: - custom greeting button
     
-    let greetingButton: UIButton = {
+    lazy var greetingButton: UIButton = {
       let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = UIColor(named: "Peach")
