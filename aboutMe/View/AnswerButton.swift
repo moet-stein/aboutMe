@@ -33,13 +33,14 @@ class AnswerButton: UIButton {
     }
     
     @objc func  buttonPressed(sender: UIButton) {
-        if sender.tag == 1 {
+        switch sender.tag {
+        case 1:
             delegate?.greet(answer: "Awesome😆")
-        } else if sender.tag == 2 {
+        case 2:
             delegate?.greet(answer: "Feeling Happy☺️")
-        } else if sender.tag == 3 {
+        case 3:
             delegate?.greet(answer: "Fantastic🤩")
-        } else {
+        default:
             delegate?.greet(answer: "Ok")
         }
     }
