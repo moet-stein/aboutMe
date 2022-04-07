@@ -244,7 +244,6 @@ class HomeView: UIView {
             topView.widthAnchor.constraint(equalToConstant: 340),
             topView.heightAnchor.constraint(equalToConstant: 400),
 
-
             snsInfoView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 20),
             snsInfoView.leadingAnchor.constraint(equalTo: topView.leadingAnchor),
             snsInfoView.trailingAnchor.constraint(equalTo: topView.trailingAnchor),
