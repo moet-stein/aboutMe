@@ -29,8 +29,8 @@ class VerticalSVWithParent: UIStackView {
     func addConstraintsWithParentView(parentView: UIView) {
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(equalTo: parentView.topAnchor, constant: 10),
-            self.leadingAnchor.constraint(equalTo: parentView.leadingAnchor, constant: 10),
-            self.trailingAnchor.constraint(equalTo: parentView.trailingAnchor, constant: -10),
+            self.leadingAnchor.constraint(equalTo: parentView.leadingAnchor, constant: 25),
+            self.trailingAnchor.constraint(equalTo: parentView.trailingAnchor, constant: -25),
             self.bottomAnchor.constraint(equalTo: parentView.bottomAnchor, constant: -10),
         ])
     }

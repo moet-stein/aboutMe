@@ -65,9 +65,9 @@ class HomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = """
-        I am an iOS Engineer who loves to learn new things and enjoys building interfaces with a strong eye on a design!
+        I am an iOS Engineer who loves to learn new things and enjoys building mobile interfaces with a strong eye on a design!
         As I've been learning Swift and iOS development, I also started interested in Computer Science topics.
-        My aim is to become a great iOS developer who can implement Data Structure and Algorithms effectively with clean code for beautiful interfaces!
+        My aim is to become a great iOS developer who can write clean code for beautiful and user-friendly interfaces!
         """
         label.font = UIFont(name: "Poppins-Regular", size: 13)
         label.textColor = UIColor(named: "GreenText")
@@ -89,7 +89,7 @@ class HomeView: UIView {
     
     private let appleLine: GreenPoppinsLabel = {
        let label = GreenPoppinsLabel()
-        label.text = "                  "
+        label.text = "                "
         return label
     }()
     
@@ -240,7 +240,7 @@ class HomeView: UIView {
         
         NSLayoutConstraint.activate([
             topView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            topView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 50),
+            topView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10),
             topView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
             topView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -30),
             topView.heightAnchor.constraint(equalToConstant: 400),
@@ -259,7 +259,7 @@ class HomeView: UIView {
             whyIosView.topAnchor.constraint(equalTo: moreInfoView.bottomAnchor, constant: 20),
             whyIosView.leadingAnchor.constraint(equalTo: moreInfoView.leadingAnchor),
             whyIosView.trailingAnchor.constraint(equalTo: moreInfoView.trailingAnchor),
-            whyIosView.heightAnchor.constraint(equalToConstant: 220),
+            whyIosView.heightAnchor.constraint(equalToConstant: 260),
             
             
             greetingButton.topAnchor.constraint(equalTo: whyIosView.bottomAnchor, constant: 20),
