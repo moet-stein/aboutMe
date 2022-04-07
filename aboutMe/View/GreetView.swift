@@ -18,7 +18,6 @@ class GreetView: UIView {
         label.font = UIFont(name: "Poppins-Bold", size: 40)
         label.textColor = UIColor(named: "GreenText")
         label.textAlignment = .center
-        label.heightAnchor.constraint(equalToConstant: 100).isActive = true
         return label
     }()
     
@@ -65,16 +64,16 @@ class GreetView: UIView {
     }
     
     private func setUpUI() {
-
         let stackView: UIStackView = {
             let view = UIStackView()
             view.translatesAutoresizingMaskIntoConstraints = false
             view.axis = .vertical
             view.alignment = .center
-            view.distribution = .fillProportionally
-            view.spacing = 40
+            view.distribution = .fillEqually
+            view.spacing = 20
             return view
         }()
+        
         stackView.addArrangedSubview(awesomeButton)
         stackView.addArrangedSubview(happyButton)
         stackView.addArrangedSubview(fantasticButton)
@@ -84,17 +83,20 @@ class GreetView: UIView {
         addSubview(stackView)
         
         NSLayoutConstraint.activate([
+            
             helloLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             helloLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             helloLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            helloLabel.heightAnchor.constraint(equalToConstant: 50),
 
             howAreYouLabel.topAnchor.constraint(equalTo: helloLabel.bottomAnchor, constant: 10),
             howAreYouLabel.leadingAnchor.constraint(equalTo: helloLabel.leadingAnchor),
             howAreYouLabel.trailingAnchor.constraint(equalTo: helloLabel.trailingAnchor),
             
-            stackView.topAnchor.constraint(equalTo: howAreYouLabel.bottomAnchor, constant: 100),
+            stackView.topAnchor.constraint(equalTo: howAreYouLabel.bottomAnchor, constant: 10),
             stackView.leadingAnchor.constraint(equalTo: howAreYouLabel.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: howAreYouLabel.trailingAnchor),
+            stackView.heightAnchor.constraint(equalToConstant: 250),
         ])
     }
 }

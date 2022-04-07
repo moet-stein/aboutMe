@@ -23,8 +23,7 @@ class AnswerButton: UIButton {
     }
     
     private func setUpUI() {
-        widthAnchor.constraint(equalToConstant: 200).isActive = true
-        heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        heightAnchor.constraint(equalToConstant: 50).isActive = true
         configuration = .answerGreet()
         translatesAutoresizingMaskIntoConstraints = false
         setTitle(buttonText, for: .normal)

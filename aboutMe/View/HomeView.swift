@@ -241,8 +241,7 @@ class HomeView: UIView {
         NSLayoutConstraint.activate([
             topView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             topView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 10),
-            topView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 30),
-            topView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -30),
+            topView.widthAnchor.constraint(equalToConstant: 340),
             topView.heightAnchor.constraint(equalToConstant: 400),
 
 
