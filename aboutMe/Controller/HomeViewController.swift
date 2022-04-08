@@ -7,12 +7,14 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, Presentable, Greeting {
+class HomeViewController: UIViewController {
 
     var contentView: HomeView!
     
     override func loadView() {
-        contentView = HomeView(presentable: self)
+        contentView = HomeView(buttonAction: {[weak self] in
+            self?.presentViewController()
+        })
         
         view = contentView
     }
@@ -20,7 +22,9 @@ class HomeViewController: UIViewController, Presentable, Greeting {
 
 
     func presentViewController() {
-       present(GreetViewController(greetingDelegate: self), animated: true, completion: nil)
+        present(GreetViewController(greeting: { [weak self] answer in
+            self?.greet(answer: answer)
+        }), animated: true, completion: nil)
     }
     
     func greet(answer: String) {

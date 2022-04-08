@@ -7,14 +7,9 @@
 
 import UIKit
 
-//this protocol is all about presenting a new view controller
-protocol Presentable: AnyObject {
-    func presentViewController()
-}
-
 class HomeView: UIView {
     
-    weak var presentable: Presentable?
+    var buttonAction: (() -> Void)
 
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -200,11 +195,11 @@ class HomeView: UIView {
 
     
     @objc func buttonPressed() {
-        presentable?.presentViewController()
+        buttonAction()
     }
    
-    init(presentable: Presentable?) {
-        self.presentable = presentable
+    init(buttonAction: @escaping () -> Void) {
+        self.buttonAction = buttonAction
         
         super.init(frame: .zero)
         setUpUI()

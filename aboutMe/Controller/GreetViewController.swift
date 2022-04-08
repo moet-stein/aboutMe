@@ -7,16 +7,13 @@
 
 import UIKit
 
-protocol Greeting: AnyObject {
-    func greet(answer: String)
-}
-
 class GreetViewController: UIViewController {
     
-    weak var greetingDelegate: Greeting?
+    var greeting: ((String) -> Void)
+    private var greetView: GreetView!
     
-    init(greetingDelegate: Greeting?) {
-        self.greetingDelegate = greetingDelegate
+    init(greeting: @escaping (String) -> Void) {
+        self.greeting = greeting
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,13 +22,13 @@ class GreetViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private var greetView: GreetView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        greetView = GreetView(greetingDeleagate: greetingDelegate)
+
+    override func loadView() {
+        greetView = GreetView(greeting: greeting)
         view = greetView
     }
+
     
 
 }

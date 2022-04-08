@@ -9,7 +9,7 @@ import UIKit
 
 class GreetView: UIView {
     
-    weak var greetingDelegate: Greeting?
+    var greeting: ((String) -> Void)
 
     private let helloLabel: UILabel = {
        let label = UILabel()
@@ -33,25 +33,25 @@ class GreetView: UIView {
     }()
     
     lazy var awesomeButton: AnswerButton = {
-        let button = AnswerButton(buttonText: "Awesome😆", delegate: greetingDelegate)
+        let button = AnswerButton(buttonText: "Awesome😆", greeting: greeting)
         button.tag = 1
         return button
     }()
     
     lazy var happyButton: AnswerButton = {
-        let button = AnswerButton(buttonText: "Feeling Happy☺️", delegate: greetingDelegate)
+        let button = AnswerButton(buttonText: "Feeling Happy☺️", greeting: greeting)
         button.tag = 2
         return button
     }()
     
     lazy var fantasticButton: AnswerButton = {
-        let button = AnswerButton(buttonText: "Fantastic🤩", delegate: greetingDelegate)
+        let button = AnswerButton(buttonText: "Fantastic🤩", greeting: greeting)
         button.tag = 3
         return button
     }()
 
-    init(greetingDeleagate: Greeting?){
-        self.greetingDelegate = greetingDeleagate
+    init(greeting: @escaping (String) -> Void){
+        self.greeting = greeting
         
         super.init(frame: .zero)
         setUpUI()

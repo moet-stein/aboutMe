@@ -9,11 +9,13 @@ import UIKit
 
 class AnswerButton: UIButton {
     private var buttonText: String
-    weak var delegate: Greeting?
+    var homeVC = HomeViewController()
+    
+    var greeting: ((String) -> Void)
 
-    init(buttonText: String, delegate: Greeting?, frame: CGRect = .zero) {
+    init(buttonText: String, greeting: @escaping (String) -> Void, frame: CGRect = .zero) {
         self.buttonText = buttonText
-        self.delegate = delegate
+        self.greeting = greeting
         super.init(frame: frame)
         self.setUpUI()
     }
@@ -34,15 +36,16 @@ class AnswerButton: UIButton {
     @objc func  buttonPressed(sender: UIButton) {
         switch sender.tag {
         case 1:
-            delegate?.greet(answer: "Awesome😆")
+            greeting("Awesome😆")
         case 2:
-            delegate?.greet(answer: "Feeling Happy☺️")
+            greeting("Feeling Happy☺️")
         case 3:
-            delegate?.greet(answer: "Fantastic🤩")
+            greeting("Fantastic🤩")
         default:
-            delegate?.greet(answer: "Ok")
+            greeting("Ok")
         }
     }
+    
 }
 
 extension UIButton.Configuration {
